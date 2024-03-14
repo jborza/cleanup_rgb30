@@ -62,5 +62,8 @@ for file_name in os.listdir(current_dir):
 print('Deleted files:')
 for file in deleted_files:
     print(file)
-    os.remove(file)
+    try:
+        os.remove(file)
+    except PermissionError:
+        print('Permission denied:', file)
     
