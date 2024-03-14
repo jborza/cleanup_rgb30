@@ -57,9 +57,7 @@ for file_name in os.listdir(current_dir):
 
 
 print('Deleted files:')
-if not os.path.exists('deleted'):
-    os.mkdir('deleted')
 for file in deleted_files:
     print(file)
-    os.rename(file, 'deleted/' + file)
+    os.remove(file)
     
