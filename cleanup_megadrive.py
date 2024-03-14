@@ -32,6 +32,9 @@ for file_name in os.listdir(current_dir):
         continue
     if not os.path.isfile(os.path.join(current_dir, file_name)):
         continue
+    if '(J)' in file_name:
+        deleted_files.append(file_name)
+        continue
 
     # Clean the file name
     cleaned_file_name = cleanup(file_name)
